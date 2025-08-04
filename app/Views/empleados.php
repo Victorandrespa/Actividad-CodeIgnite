@@ -60,6 +60,24 @@
                     </div>
                 </div>
 
+
+                <?php if (session()->getFlashdata('mensaje')): ?>
+                    <div id="mensaje" class="alert alert-success">
+                        <?= session()->getFlashdata('mensaje'); ?>
+                    </div>
+                <?php endif; ?>
+
+                <script>
+                    setTimeout(function () {
+                        let mensaje = document.getElementById('mensaje');
+                        if (mensaje) {
+                            mensaje.style.display = 'none';
+                        }
+                    }, 3000); // 3000 milisegundos = 3 segundos
+                </script>
+
+
+
                 <table class="table mt-3 table-hover table-bordered">
                     <thead class="table-dark text-center">
                         <tr>
@@ -67,6 +85,7 @@
                             <th>Nombre</th>
                             <th>Apellido</th>
                             <th>Telefono</th>
+                            <th>Edicion</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,6 +100,11 @@
                                 <td><?= $empleado['nombre']; ?></td>
                                 <td><?= $empleado['apellido']; ?></td>
                                 <td><?= $empleado['telefono']; ?></td>
+                                <td class="d-flex justify-content-center gap-2 ">
+                                    <a href="<?= base_url('update_empleado/') . $empleado['codigo_usuario']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
+                                    <a href="<?= base_url('eliminar_empleado/') . $empleado['codigo_usuario']; ?>"
+                                        class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
+                                </td>
                             </tr>
 
                             <?php
