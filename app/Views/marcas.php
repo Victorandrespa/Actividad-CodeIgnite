@@ -8,47 +8,45 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<title>Libros</title>
+<title>Marcas</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2 class="my-2">Libros</h2>
+                <h2 class="my-2">Marcas</h2>
 
                 <div class="d-flex flex-row justify-content-between align-items-center">
 
-                    <a href="verEmpleados" class="btn btn btn-outline-danger">Ir a Usuarios</a>
+                    <a href="verLibros" class="btn btn btn-outline-danger">Home</a>
+
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-outline-dark my-2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal2">
-                        <i class="bi bi-folder-plus"></i>
+                        data-bs-target="#exampleModal4">
+                        <i class="bi bi-person-plus-fill"></i>
                     </button>
 
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Libro</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Nueva Marca</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="agregarLibro" method="post">
-                                    <label for="txt_titulo" class="form-label">Titulo:</label>
-                                    <input type="text" name="txt_titulo" id="txt_titulo" class="form-control">
-                                    <label for="txt_autor" class="form-label">Autor:</label>
-                                    <input type="text" name="txt_autor" id="txt_autor" class="form-control">
-                                    <label for="txt_precio" class="form-label">Precio:</label>
-                                    <input type="number" name="txt_precio" id="txt_precio" class="form-control">
-                                    <label for="txt_codigo_libro" class="form-label">Codigo_libro:</label>
-                                    <input type="text" name="txt_codigo_libro" id="txt_codigo_libro"
-                                        class="form-control">
+                                <form action="agregarEmpleado" method="post">
+
+                                    <label for="txt_id" class="form-label">ID:</label>
+                                    <input type="text" name="txt_id" id="txt_id" class="form-control">
+
+                                    <label for="txt_marca" class="form-label">Marca:</label>
+                                    <input type="text" name="txt_marca" id="txt_marca" class="form-control">
 
                                     <button type="submit" class="btn btn-outline-primary mt-2">Guardar</button>
 
@@ -61,13 +59,30 @@
                     </div>
                 </div>
 
+
+                <?php if (session()->getFlashdata('mensaje')): ?>
+                    <div id="mensaje" class="alert alert-success">
+                        <?= session()->getFlashdata('mensaje'); ?>
+                    </div>
+                <?php endif; ?>
+
+                <script>
+                    setTimeout(function () {
+                        let mensaje = document.getElementById('mensaje');
+                        if (mensaje) {
+                            mensaje.style.display = 'none';
+                        }
+                    }, 3000); // 3000 milisegundos = 3 segundos
+                </script>
+
+
+
                 <table class="table mt-3 table-hover table-bordered">
                     <thead class="table-dark text-center">
                         <tr>
-                            <th>Titulo</th>
-                            <th>Autor</th>
-                            <th>Precio</th>
-                            <th>Codigo Libro</th>
+                            <th>ID</th>
+                            <th>Marca</th>                            
+                            <th>Editar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,20 +93,22 @@
                             ?>
 
                             <tr>
-                                <td><?php echo ($empleado['titulo']) ?></td>
-                                <td><?= $empleado['autor']; ?></td>
-                                <td><?= $empleado['precio']; ?></td>
-                                <td><?= $empleado['codigo_libro']; ?></td>
+                                <td><?php echo ($empleado['marca_id']) ?></td>
+                                <td><?= $empleado['marca']; ?></td>                            
+                                <td class="d-flex justify-content-center gap-2 ">
+                                    <a href="<?= base_url('update_empleado/') . $empleado['marca_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
+                                    <a href="<?= base_url('eliminar_empleado/') . $empleado['marca_id']; ?>"
+                                        class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
+                                </td>
                             </tr>
 
                             <?php
                         }
                         ?>
-
-
-
                     </tbody>
                 </table>
+
+                
             </div>
         </div>
     </div>

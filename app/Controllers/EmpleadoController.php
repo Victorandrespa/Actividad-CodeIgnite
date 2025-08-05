@@ -18,10 +18,12 @@ class EmpleadoController extends BaseController
         //crear un objeto de tipo empleado model
         $empleado = new EmpleadoModel();
         $datos = [
-            'codigo_usuario' => $this->request->getPost('txt_id'),
+            'empleado_id' => $this->request->getPost('txt_id'),
             'nombre' => $this->request->getPost('txt_nombre'),
             'apellido' => $this->request->getPost('txt_apellido'),
             'telefono' => $this->request->getPost('txt_telefono'),
+            'puesto_id' => $this->request->getPost('txt_puesto_id'),
+            'fecha_nacimiento' => $this->request->getPost('txt_f_nacimiento'),
 
         ];
         $empleado->insert($datos);
@@ -40,20 +42,22 @@ class EmpleadoController extends BaseController
     public function buscar($id)
     {
         $empleado = new EmpleadoModel();
-        $datos['datos']= $empleado->where(['codigo_usuario' => $id])->first();
+        $datos['datos']= $empleado->where(['empleado_id' => $id])->first();
         return view('update_empleado', $datos);
     }
     public function editar($id)
     {
         $datos= [
-            'codigo_usuario' => $this->request->getPost('txt_id'),
+            'empleado_id' => $this->request->getPost('txt_id'),
             'nombre' => $this->request->getPost('txt_nombre'),
             'apellido' => $this->request->getPost('txt_apellido'),
             'telefono' => $this->request->getPost('txt_telefono'),
+            'puesto_id' => $this->request->getPost('txt_puesto_id'),
+            'fecha_nacimiento' => $this->request->getPost('txt_f_nacimiento'),
         ];
         //print_r($datos);
         $empleado = new EmpleadoModel();
-        $empleado->update($datos['codigo_usuario'],$datos);
+        $empleado->update($datos['empleado_id'],$datos);
         return $this->index();
     }
 

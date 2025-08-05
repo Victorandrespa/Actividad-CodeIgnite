@@ -8,50 +8,57 @@
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<title>Empleados</title>
+<title>Usuarios</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2 class="my-2">Empleados</h2>
+                <h2 class="my-2">Usuarios</h2>
 
                 <div class="d-flex flex-row justify-content-between align-items-center">
 
                     <a href="verLibros" class="btn btn btn-outline-danger">Home</a>
+
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-outline-dark my-2" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">
+                        data-bs-target="#exampleModal2">
                         <i class="bi bi-person-plus-fill"></i>
                     </button>
 
                 </div>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Empleado</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Usuario</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form action="agregarEmpleado" method="post">
+
                                     <label for="txt_id" class="form-label">ID:</label>
                                     <input type="text" name="txt_id" id="txt_id" class="form-control">
-                                    <label for="txt_nombre" class="form-label">Nombre:</label>
-                                    <input type="text" name="txt_nombre" id="txt_nombre" class="form-control">
-                                    <label for="txt_apellido" class="form-label">Apellido:</label>
-                                    <input type="text" name="txt_apellido" id="txt_apellido" class="form-control">
-                                    <label for="txt_telefono" class="form-label">Telefono:</label>
-                                    <input type="number" name="txt_telefono" id="txt_telefono" class="form-control">
-                                    <label for="txt_puesto_id" class="form-label">Puesto ID:</label>
-                                    <input type="number" name="txt_puesto_id" id="txt_puesto_id" class="form-control">
-                                    <label for="txt_f_nacimiento" class="form-label">Fecha Nacimiento:</label>
-                                    <input type="date" name="txt_f_nacimiento" id="txt_f_nacimiento" class="form-control">
+
+                                    <label for="txt_usuario" class="form-label">Usuario:</label>
+                                    <input type="text" name="txt_usuario" id="txt_usuario" class="form-control">
+
+                                    <label for="txt_email" class="form-label">Email:</label>
+                                    <input type="text" name="txt_email" id="txt_email" class="form-control">
+
+                                    <label for="txt_password" class="form-label">Password:</label>
+                                    <input type="password" name="txt_password" id="txt_password" class="form-control">
+
+                                    <label for="txt_estado" class="form-label">Estado:</label>
+                                    <input type="number" name="txt_estado" id="txt_estado" class="form-control">
+
+                                    <label for="txt_rol_id" class="form-label">Rol ID:</label>
+                                    <input type="date" name="txt_rol_id" id="txt_rol_id" class="form-control">
 
                                     <button type="submit" class="btn btn-outline-primary mt-2">Guardar</button>
 
@@ -86,11 +93,11 @@
                     <thead class="table-dark text-center">
                         <tr>
                             <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Telefono</th>
-                            <th>Puesto ID</th>
-                            <th>Fecha Nacimiento</th>
+                            <th>Usuario</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Estado</th>
+                            <th>Rol Id</th>
                             <th>Editar</th>
                         </tr>
                     </thead>
@@ -102,15 +109,15 @@
                             ?>
 
                             <tr>
-                                <td><?php echo ($empleado['empleado_id']) ?></td>
-                                <td><?= $empleado['nombre']; ?></td>
-                                <td><?= $empleado['apellido']; ?></td>
-                                <td><?= $empleado['telefono']; ?></td>
-                                <td><?= $empleado['puesto_id']; ?></td>
-                                <td><?= $empleado['fecha_nacimiento']; ?></td>
+                                <td><?php echo ($empleado['usuario_id']) ?></td>
+                                <td><?= $empleado['usuario']; ?></td>
+                                <td><?= $empleado['email']; ?></td>
+                                <td><?= $empleado['PASSWORD']; ?></td>
+                                <td><?= $empleado['estado']; ?></td>
+                                <td><?= $empleado['rol_id']; ?></td>
                                 <td class="d-flex justify-content-center gap-2 ">
-                                    <a href="<?= base_url('update_empleado/') . $empleado['empleado_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
-                                    <a href="<?= base_url('eliminar_empleado/') . $empleado['empleado_id']; ?>"
+                                    <a href="<?= base_url('update_empleado/') . $empleado['usuario_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
+                                    <a href="<?= base_url('eliminar_empleado/') . $empleado['usuario_id']; ?>"
                                         class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
@@ -118,9 +125,10 @@
                             <?php
                         }
                         ?>
-
                     </tbody>
                 </table>
+
+                
             </div>
         </div>
     </div>

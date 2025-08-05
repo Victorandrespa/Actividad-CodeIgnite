@@ -7,18 +7,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <title>Usuarios</title>
+    <title>Empleado</title>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
-                <h2 class="my-4">Modificar Usuario</h2>
+                <h2 class="my-4">Update Empleado</h2>
                 <form action="<?= base_url('editar_empleado') ?>" method="post">
                     <label for="txt_id" class="form-label">Id</label>
                     <input type="text" name="txt_id" id="txt_id" class="form-control"
-                        value="<?= $datos['codigo_usuario'] ?>" readonly>
+                        value="<?= $datos['empleado_id'] ?>" readonly>
                     <label for="txt_nombre" class="form-label">Nombre</label>
                     <input type="text" name="txt_nombre" id="txt_nombre" class="form-control"
                         value="<?= $datos['nombre'] ?>">
@@ -28,6 +28,12 @@
                     <label for="txt_telefono" class="form-label">Telefono:</label>
                     <input type="text" name="txt_telefono" id="txt_telefono" class="form-control"
                         value="<?= $datos['telefono'] ?>">
+                    <label for="txt_puesto_id" class="form-label">Puesto ID:</label>
+                    <input type="text" name="txt_puesto_id" id="txt_puesto_id" class="form-control"
+                        value="<?= $datos['puesto_id'] ?>">
+                    <label for="txt_f_nacimiento" class="form-label">Fecha Nacimiento:</label>
+                    <input type="text" name="txt_f_nacimiento" id="txt_f_nacimiento" class="form-control"
+                        value="<?= $datos['fecha_nacimiento'] ?>">
 
                     <button type="submit" class="btn btn-outline-dark mt-3 w-100">Guardar</button>
 

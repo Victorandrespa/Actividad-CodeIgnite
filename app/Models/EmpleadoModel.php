@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class EmpleadoModel extends Model
 {
-    protected $table         = 'usuarios'; 
-    protected $primaryKey         = 'codigo_usuario'; 
+    protected $table         = 'empleados'; 
+    protected $primaryKey         = 'empleado_id'; 
     protected $allowedFields = [
-        'codigo_usuario', 'nombre', 'apellido', 'telefono',
+        'empleado_id','nombre','apellido','telefono','puesto_id','fecha_nacimiento',
     ];
     //protected $returnType    = \App\Entities\User::class;
     //protected $useTimestamps = true;

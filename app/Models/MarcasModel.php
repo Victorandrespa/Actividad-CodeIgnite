@@ -4,12 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class LibrosModel extends Model
+class MarcasModel extends Model
 {
-    protected $table         = 'libros'; 
-    protected $primaryKey         = 'codigo_libro'; 
+    protected $table         = 'marcas'; 
+    protected $primaryKey         = 'marca_id'; 
     protected $allowedFields = [
-        'titulo', 'autor', 'precio', 'codigo_libro',
+        'marca_id','marca', 
     ];
     //protected $returnType    = \App\Entities\User::class;
     //protected $useTimestamps = true;
