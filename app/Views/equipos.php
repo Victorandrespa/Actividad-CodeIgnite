@@ -40,31 +40,31 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="agregarEmpleado" method="post">
+                                <form action="agregarEquipo" method="post">
 
                                     <label for="txt_id" class="form-label">ID:</label>
-                                    <input type="text" name="txt_id" id="txt_id" class="form-control">
+                                    <input type="number" name="txt_id" id="txt_id" class="form-control">
 
                                     <label for="txt_serie" class="form-label">No_serie:</label>
-                                    <input type="text" name="txt_serie" id="txt_serie" class="form-control">
+                                    <input type="number" name="txt_serie" id="txt_serie" class="form-control">
 
                                     <label for="txt_marca_id" class="form-label">Marca ID:</label>
                                     <input type="text" name="txt_marca_id" id="txt_marca_id" class="form-control">
 
                                     <label for="txt_descripcion" class="form-label">Descripcion:</label>
-                                    <input type="password" name="txt_descripcion" id="txt_descripcion" class="form-control">
+                                    <input type="text" name="txt_descripcion" id="txt_descripcion" class="form-control">
 
                                     <label for="txt_fecha_compra" class="form-label">Fecha Compra:</label>
-                                    <input type="number" name="txt_fecha_compra" id="txt_fecha_compra" class="form-control">
+                                    <input type="date" name="txt_fecha_compra" id="txt_fecha_compra" class="form-control">
 
                                     <label for="txt_precio" class="form-label">Precio:</label>
-                                    <input type="date" name="txt_precio" id="txt_precio" class="form-control">
+                                    <input type="number" name="txt_precio" id="txt_precio" class="form-control">
 
                                     <label for="txt_tipo_equipo" class="form-label">Tipo Equipo:</label>
-                                    <input type="date" name="txt_tipo_equipo" id="txt_tipo_equipo" class="form-control">
+                                    <input type="text" name="txt_tipo_equipo" id="txt_tipo_equipo" class="form-control">
 
                                     <label for="txt_empleado_id" class="form-label">Empleado ID:</label>
-                                    <input type="date" name="txt_empleado_id" id="txt_empleado_id" class="form-control">
+                                    <input type="number" name="txt_empleado_id" id="txt_empleado_id" class="form-control">
 
                                     <button type="submit" class="btn btn-outline-primary mt-2">Guardar</button>
 
@@ -126,8 +126,8 @@
                                 <td><?= $empleado['tipo_equipo']; ?></td>
                                 <td><?= $empleado['empleado_id']; ?></td>
                                 <td class="d-flex justify-content-center gap-2 ">
-                                    <a href="<?= base_url('update_empleado/') . $empleado['equipo_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
-                                    <a href="<?= base_url('eliminar_empleado/') . $empleado['equipo_id']; ?>"
+                                    <a href="<?= base_url('update_equipo/') . $empleado['equipo_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
+                                    <a href="<?= base_url('eliminar_equipo/') . $empleado['equipo_id']; ?>"
                                         class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>

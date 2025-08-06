@@ -24,7 +24,6 @@ class UsuarioController extends BaseController
             'PASSWORD' => $this->request->getPost('txt_password'),
             'estado' => $this->request->getPost('txt_estado'),
             'rol_id' => $this->request->getPost('txt_rol_id'),
-
         ];
         $empleado->insert($datos);
         return $this->index();
@@ -37,7 +36,7 @@ class UsuarioController extends BaseController
 
         session()->setFlashdata('mensaje', 'Registro: '.$id.' eliminado exitosamente.');
 
-        return redirect()->to(base_url('verUsuarios'));
+        return redirect()->to(base_url('verUsuario'));
     }
     public function buscar($id)
     {

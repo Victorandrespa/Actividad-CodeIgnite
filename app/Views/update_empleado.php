@@ -32,7 +32,7 @@
                     <input type="text" name="txt_puesto_id" id="txt_puesto_id" class="form-control"
                         value="<?= $datos['puesto_id'] ?>">
                     <label for="txt_f_nacimiento" class="form-label">Fecha Nacimiento:</label>
-                    <input type="text" name="txt_f_nacimiento" id="txt_f_nacimiento" class="form-control"
+                    <input type="date" name="txt_f_nacimiento" id="txt_f_nacimiento" class="form-control"
                         value="<?= $datos['fecha_nacimiento'] ?>">
 
                     <button type="submit" class="btn btn-outline-dark mt-3 w-100">Guardar</button>

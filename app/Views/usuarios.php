@@ -40,16 +40,16 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="agregarEmpleado" method="post">
+                                <form action="agregarUsuario" method="post">
 
                                     <label for="txt_id" class="form-label">ID:</label>
-                                    <input type="text" name="txt_id" id="txt_id" class="form-control">
+                                    <input type="number" name="txt_id" id="txt_id" class="form-control">
 
                                     <label for="txt_usuario" class="form-label">Usuario:</label>
                                     <input type="text" name="txt_usuario" id="txt_usuario" class="form-control">
 
                                     <label for="txt_email" class="form-label">Email:</label>
-                                    <input type="text" name="txt_email" id="txt_email" class="form-control">
+                                    <input type="email" name="txt_email" id="txt_email" class="form-control">
 
                                     <label for="txt_password" class="form-label">Password:</label>
                                     <input type="password" name="txt_password" id="txt_password" class="form-control">
@@ -58,7 +58,7 @@
                                     <input type="number" name="txt_estado" id="txt_estado" class="form-control">
 
                                     <label for="txt_rol_id" class="form-label">Rol ID:</label>
-                                    <input type="date" name="txt_rol_id" id="txt_rol_id" class="form-control">
+                                    <input type="number" name="txt_rol_id" id="txt_rol_id" class="form-control">
 
                                     <button type="submit" class="btn btn-outline-primary mt-2">Guardar</button>
 
@@ -116,8 +116,8 @@
                                 <td><?= $empleado['estado']; ?></td>
                                 <td><?= $empleado['rol_id']; ?></td>
                                 <td class="d-flex justify-content-center gap-2 ">
-                                    <a href="<?= base_url('update_empleado/') . $empleado['usuario_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
-                                    <a href="<?= base_url('eliminar_empleado/') . $empleado['usuario_id']; ?>"
+                                    <a href="<?= base_url('update_usuario/') . $empleado['usuario_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
+                                    <a href="<?= base_url('eliminar_usuario/') . $empleado['usuario_id']; ?>"
                                         class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
