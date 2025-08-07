@@ -19,7 +19,7 @@
 
                 <div class="d-flex flex-row justify-content-between align-items-center">
 
-                    <a href="verLibros" class="btn btn btn-outline-danger">Home</a>
+                    <a href="index.php" class="btn btn btn-outline-danger">Home</a>
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-outline-dark my-2" data-bs-toggle="modal"
@@ -40,7 +40,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="agregarEmpleado" method="post">
+                                <form action="agregarTipoEquipo" method="post">
 
                                     <label for="txt_id" class="form-label">ID:</label>
                                     <input type="text" name="txt_id" id="txt_id" class="form-control">
@@ -94,10 +94,10 @@
 
                             <tr>
                                 <td><?php echo ($empleado['tipo_id']) ?></td>
-                                <td><?= $empleado['nombre']; ?></td>                            
+                                <td><?= $empleado['marca']; ?></td>                            
                                 <td class="d-flex justify-content-center gap-2 ">
-                                    <a href="<?= base_url('update_empleado/') . $empleado['tipo_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
-                                    <a href="<?= base_url('eliminar_empleado/') . $empleado['tipo_id']; ?>"
+                                    <a href="<?= base_url('update_tipo_equipo/') . $empleado['tipo_id']; ?>" class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
+                                    <a href="<?= base_url('eliminar_tipo_equipo/') . $empleado['tipo_id']; ?>"
                                         class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>

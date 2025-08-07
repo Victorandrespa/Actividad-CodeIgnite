@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class PuestoModel extends Model
 {
-    protected $table         = 'puestos'; 
+    protected $table         = 'puesto'; 
     protected $primaryKey         = 'puesto_id'; 
     protected $allowedFields = [
         'puesto_id','puesto',

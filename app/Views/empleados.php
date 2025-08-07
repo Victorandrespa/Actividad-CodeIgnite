@@ -19,7 +19,7 @@
 
                 <div class="d-flex flex-row justify-content-between align-items-center">
 
-                    <a href="verLibros" class="btn btn btn-outline-danger">Home</a>
+                    <a href="index.php" class="btn btn btn-outline-danger">Home</a>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-outline-dark my-2" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">
