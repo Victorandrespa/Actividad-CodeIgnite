@@ -9,7 +9,7 @@ class TipoEquipoModel extends Model
     protected $table         = 'tipo_equipo'; 
     protected $primaryKey         = 'tipo_id'; 
     protected $allowedFields = [
-        'tipo_id','nombre', 
+        'tipo_id','marca', 
     ];
     //protected $returnType    = \App\Entities\User::class;
     //protected $useTimestamps = true;

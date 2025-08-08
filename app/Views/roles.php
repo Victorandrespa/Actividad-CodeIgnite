@@ -101,9 +101,9 @@
                                 <td><?= $empleado['nombre']; ?></td>
                                 <td><?= $empleado['descripcion']; ?></td>
                                 <td class="d-flex justify-content-center gap-2 ">
-                                    <a href="<?= base_url('update_roles/') . $empleado['rol_id']; ?>"
+                                    <a href="<?= base_url('update_rol/') . $empleado['rol_id']; ?>"
                                         class="btn btn-outline-dark"><i class="bi bi-pencil"></i></a>
-                                    <a href="<?= base_url('eliminar_roles/') . $empleado['rol_id']; ?>"
+                                    <a href="<?= base_url('eliminar_rol/') . $empleado['rol_id']; ?>"
                                         class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>

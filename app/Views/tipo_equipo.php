@@ -45,8 +45,8 @@
                                     <label for="txt_id" class="form-label">ID:</label>
                                     <input type="text" name="txt_id" id="txt_id" class="form-control">
 
-                                    <label for="txt_nombre" class="form-label">Nombre:</label>
-                                    <input type="text" name="txt_nombre" id="txt_nombre" class="form-control">
+                                    <label for="txt_marca" class="form-label">Marca:</label>
+                                    <input type="text" name="txt_marca" id="txt_marca" class="form-control">
 
                                     <button type="submit" class="btn btn-outline-primary mt-2">Guardar</button>
 
@@ -81,7 +81,7 @@
                     <thead class="table-dark text-center">
                         <tr>
                             <th>ID</th>
-                            <th>Nombre</th>                            
+                            <th>Marca</th>                            
                             <th>Editar</th>
                         </tr>
                     </thead>

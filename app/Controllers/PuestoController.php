@@ -32,7 +32,7 @@ class PuestoController extends BaseController
 
         session()->setFlashdata('mensaje', 'Registro: '.$id.' eliminado exitosamente.');
 
-        return redirect()->to(base_url('verPuestos'));
+        return redirect()->to(base_url('verPuesto'));
     }
     public function buscar($id)
     {
